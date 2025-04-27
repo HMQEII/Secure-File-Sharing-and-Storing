@@ -1,31 +1,6 @@
-# 📦 DecentralizedFileSharing
-
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?style=flat-square)
-![React](https://img.shields.io/badge/React-18.2.0-blue?style=flat-square)
-![Hardhat](https://img.shields.io/badge/Hardhat-2.14.1-purple?style=flat-square)
-
-## Project Overview
-DecentralizedFileSharing is a secure and decentralized storage solution inspired by services like Google Drive, leveraging blockchain technology for data integrity and security. The architecture consists of a React frontend for user interaction and smart contracts deployed on the Ethereum blockchain to manage file uploads and retrievals.
-
-### Architecture Components
-- **Frontend**: Built using React, providing a seamless user interface to interact with the storage system.
-- **Smart Contracts**: Deployed on the Ethereum network that handle file storage logic securely.
-- **Database (if applicable)**: Currently not applicable as data management relies on blockchain technology.
-
-## 🌟 Features
-- Secure file uploads and downloads utilizing blockchain technology.
-- Decentralized access control mechanisms.
-- User-friendly interface built with React for easy navigation.
-- Responsive design compatible with various devices.
-
 ## Installation Steps
 To set up the project locally:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/DecentralizedFileSharing.git
-   ```
-
+1. clone the repo
 2. Navigate into the project directory:
    ```bash
    cd DecentralizedFileSharing/
