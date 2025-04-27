@@ -11,7 +11,7 @@ const Display = ({ contract, account }) => {
       } else {
         dataArray = await contract.display(account);
 
-        // console.log(dataArray);
+        console.log(dataArray);
       }
     } catch (e) {
       alert("You don't have access");

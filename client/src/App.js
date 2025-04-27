@@ -28,22 +28,43 @@ function App() {
         const signer = provider.getSigner();
         const address = await signer.getAddress();
         setAccount(address);
+        
+        // Check and switch to correct network if necessary
+        const chainId = await provider.getNetwork().then((network) => network.chainId);
+        const desiredChainId = 1337; // Hardhat's default chainId for local network
+        if (chainId !== desiredChainId) {
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: '0x539' }], // 0x539 is Hardhat Network's chainId in hex
+            });
+          } catch (switchError) {
+            if (switchError.code === 4902) {
+              // Handle case where the desired chain is not available in MetaMask
+              alert("Please add the correct network to MetaMask!");
+            }
+            console.error('Error while switching network:', switchError);
+          }
+        }
+
         let contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
+        // let contractAddress = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
 
         const contract = new ethers.Contract(
           contractAddress,
           Upload.abi,
           signer
         );
-        //console.log(contract);
         setContract(contract);
         setProvider(provider);
       } else {
         console.error("Metamask is not installed");
       }
     };
+
     provider && loadProvider();
   }, []);
+
   return (
     <>
       {!modalOpen && (
@@ -55,9 +76,9 @@ function App() {
         <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
       )}
 
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
+      <div className="bg"></div>
+      <div className="bg bg2"></div>
+      <div className="bg bg3"></div>
       <div
         style={{
           textAlign: "center",
