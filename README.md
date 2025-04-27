@@ -79,10 +79,6 @@ For deploying smart contracts, use the deploy script located in `scripts/deploy.
     🔒 Lock.js      
 ```
 
-## Development and Deployment
-
-### Developer Information
-Developers should have Node.js installed along with Truffle or Hardhat setup for managing smart contracts.
 
 ### Deployment Instructions
 To deploy your contracts, ensure you are in the root directory and run:
@@ -91,16 +87,4 @@ npx hardhat run scripts/deploy.js --network <your-network>
 ```
 Replace `<your-network>` with your desired Ethereum network configuration in `hardhat.config.js`.
 
-### Environment Variables Setup (Example)
-You can set environment variables necessary for deployment in a `.env` file at the root level of your project without actual secrets included:
 
-```
-API_KEY=your_api_key_here
-PRIVATE_KEY=your_private_key_here
-```
-
-## License Information
-This project is currently unlicensed.
-
-Version: 1  
-Last updated: 2025-03-21T06:19:01.391Z
